@@ -1,0 +1,1 @@
+Meteor.JS package for bootstrap alerts.
