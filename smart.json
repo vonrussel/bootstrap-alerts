@@ -1,0 +1,9 @@
+{
+  "name": "bootstrap-alerts",
+  "description": "Wrapper for bootstrap 3 alerts. Simple add this package and call Alerts.add(message, type)",
+  "homepage": "",
+  "author": "",
+  "version": "0.0.1",
+  "git": "",
+  "packages": {}
+}

@@ -1,0 +1,15 @@
+<template name="bootstrapAlerts">
+    {{#each alerts}}
+    {{> bootstrapAlert}}
+    {{/each}}
+</template>
+
+
+<template name="bootstrapAlert">
+    <div class="alert alert-{{mode}} {{#if options.dismissable}}alert-dismissable{{/if}} hide {{options.classes}}">
+        {{#if options.dismissable}}
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{/if}}
+        {{message}}
+    </div>
+</template>
