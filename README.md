@@ -121,7 +121,7 @@ This is example of [iron-router](https://github.com/EventedMind/iron-router#usin
 
 ```javascript 
 
-Router.before({ Alerts.removeSeen(); });
+Router.before(function () { Alerts.removeSeen(); });
 
 ```
 
