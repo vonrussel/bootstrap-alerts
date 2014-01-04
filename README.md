@@ -2,7 +2,9 @@
 
 Meteor Package for [Bootstrap Alerts](http://getbootstrap.com/components/#alerts)
 
-Bootstrap 3.0 contains 4 types of builtin alerts: success, info, warning, danger
+Example here: http://bootstrap-alerts-example.meteor.com/ Sources of example here: ```examples/bootstrap-alerts-example```.
+
+Bootstrap 3.0 contains 4 types of builtin alerts: success, info, warning, danger.
 
 You can easelly add such sort of notifications to your [Meteor](https://meteor.com) project by using this package.
 
@@ -94,6 +96,25 @@ Alerts.add('Can\'t remove Admin user!', 'danger', {
             });
 ```
 
+## Removing Alerts
+
+In case if you use common template for your application and alerts should be removing after changing a page you should call ``` removeSeen ``` function:
+
+```javascript 
+/**
+     * Call this function before loading a new page to clear errors from previous page
+     * Best way is using Router filtering feature to call this function
+     */
+    removeSeen: function ()
+```
+
+This is example of [iron-router](https://github.com/EventedMind/iron-router#using-hooks) ```before``` hook:
+
+```javascript 
+
+Router.before({ Alerts.removeSeen(); });
+
+```
 
 ## License
 
