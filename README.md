@@ -1,14 +1,21 @@
 #Bootstrap Alerts
 
-Meteor Package for [Bootstrap Alerts](http://getbootstrap.com/components/#alerts)
+Meteor Package for [Bootstrap Alerts](http://getbootstrap.com/components/#alerts). Live example [here](http://bootstrap-alerts-example.meteor.com).
 
-Example here: http://bootstrap-alerts-example.meteor.com/ Sources of example here: ```examples/bootstrap-alerts-example```.
+## Basics
+
+```javascript
+Alerts.add('Database reading error!'); 
+```
+
+![Example image](https://raw.github.com/asktomsk/bootstrap-alerts/master/examples/bootstrap-alerts-example/danger.png)
+
 
 Bootstrap 3.0 contains 4 types of builtin alerts: success, info, warning, danger.
 
 You can easelly add such sort of notifications to your [Meteor](https://meteor.com) project by using this package.
 
-## Simple using
+## Usage
 
 Install package from [Atmosphere](https://atmosphere.meteor.com/wtf/app):
 
@@ -24,6 +31,7 @@ Put template string to top of your page:
 Display alerts from JavaScript code:
 
 ```javascript
+Alerts.add('Database reading error!'); // default type is 'danger'
 Alerts.add('Local drive [C:] formatted successfully!', 'success');
 Alerts.add('Server recovered from crash.', 'info');
 Alerts.add('Please don\'t eat my cake!', 'warning');
@@ -71,22 +79,23 @@ You can override from javaScript code, e.g.:
 Alerts.defaultOptions.alertsLimit = 1;
 ```
 
-### Alert.add
+### Function Alerts.add
 
-The prototype of ```Alert.add``` function is:
+The prototype of ``` Alerts.add``` function is:
 
 ```javascript
  /**
      * Add an alert
      *
      * @param message (String) Text to display.
-     * @param mode (String) One of bootstrap alerts types: success, info, warning, danger
+     * @param mode (String) One of bootstrap alerts types: 'success', 'info', 'warning', 'danger' (default)
      * @param options (Object) Options if required to override some of default ones.
      *                          See Alerts.defaultOptions for all values.
      */
     add: function (message, mode, options)
 ```
 
+The ```mode``` and ```options``` parameters are optional.
 
 The ```options``` parameter provides customization for current alert. Example:
 
@@ -98,7 +107,7 @@ Alerts.add('Can\'t remove Admin user!', 'danger', {
 
 ## Removing Alerts
 
-In case if you use common template for your application and alerts should be removing after changing a page you should call ``` removeSeen ``` function:
+In case if you use common template for your application and alerts should be removing after changing a page you should call ``` Alerts.removeSeen() ``` function:
 
 ```javascript 
 /**
