@@ -5,9 +5,9 @@ Package.describe({
 Package.on_use(function (api, where) {
     api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
     api.add_files([
-        'bootstrap-alerts.js'
-        , 'bootstrap-alerts_templates.html'
-        , 'bootstrap-alerts_templates.js'
+        'lib/bootstrap-alerts.js'
+        , 'lib/bootstrap-alerts_templates.html'
+        , 'lib/bootstrap-alerts_templates.js'
     ]
         , 'client');
     if (api.export) {
@@ -18,5 +18,5 @@ Package.on_use(function (api, where) {
 Package.on_test(function (api) {
     api.use('bootstrap-alerts');
 
-    api.add_files('bootstrap-alerts_tests.js', ['client']);
+    api.add_files('test/bootstrap-alerts_tests.js', ['client']);
 });
